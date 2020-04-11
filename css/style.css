@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #eeeeee;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.5)), url(../img/ciudad.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  max-width: 120rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+nav {
+  padding-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /*con este lo centras todo*/
+  text-transform: uppercase;
+  font-size: 1.6rem;
+}
+
+.brand {
+  font-size: 3rem;
+  font-weight: 300;
+  transform: translateX(-100rem);
+  animation: slideIn .5s forwards;
+}
+
+.brand span {
+  color: crimson;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  list-style: none;
+  transform: translateX(100rem);
+  animation: slideIn .5s forwards;
+}
+
+nav ul li a {
+  padding: 1rem 0;
+  margin: 0 3rem;
+  position: relative;
+  letter-spacing: 2px;
+}
+
+nav ul li a:last-child {
+  margin-right: 0; /*quita el margen de este ultimo elemento*/
+}
+
+nav ul li a::before,
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: crimson;
+  left: 0;
+  transform: scaleX(0);
+  transition: all .5s;
+}
+
+nav ul li a::before {
+  top: 0;
+  transform-origin: left;
+}
+
+nav ul li a::after {
+  bottom: 0;
+  transform-origin: right;
+}
+
+nav ul li a:hover::after,
+nav ul li a:hover::before {
+  transform: scaleX(1);
+}
+
+/* animacion */
+@keyframes slideIn {
+  from {
+
+  }
+  to{
+    transform: translateX(0);
+  }
+}
